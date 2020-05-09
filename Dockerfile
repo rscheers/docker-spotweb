@@ -12,7 +12,6 @@ LABEL maintainer="rwscheers"
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV SPOTWEB_RELEASE_TYPE="Release"
 
-RUN     echo "**** install dependencies ****"
 RUN     apt-get update
 RUN     apt-get install -y apt-utils
 RUN     apt-get install -y git nginx mariadb-common php7.3-fpm php7.3-gd
@@ -39,13 +38,9 @@ RUN		chmod +x /opt/create-mysql-structure.sh
 #ADD		nginx.conf /etc/nginx/nginx.conf
 ADD		spotweb.conf /etc/nginx/sites-enabled/spotweb.conf
 
-RUN     mkdir -p /app/spotweb 
-RUN     echo "ReleaseType=${SPOTWEB_RELEASE_TYPE}\nPackageVersion=${VERSION}\nPackageAuthor=rwscheers" > /app/spotweb/package_info
-RUN     echo "**** cleanup ****"
+# RUN     mkdir -p /app/spotweb 
+# RUN     echo "ReleaseType=${SPOTWEB_RELEASE_TYPE}\nPackageVersion=${VERSION}\nPackageAuthor=rwscheers" > /app/spotweb/package_info
 RUN     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
-
-# copy local files
-#COPY root/ /
 
 # ports and volumes
 EXPOSE 80
