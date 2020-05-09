@@ -1,5 +1,5 @@
 #FROM lsiobase/ubuntu:arm32v7-bionic
-FROM arm64v8/debian
+FROM rwscheers/raspbian-buster
 
 # set version label
 ARG BUILD_DATE
