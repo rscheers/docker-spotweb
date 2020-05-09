@@ -17,15 +17,15 @@ RUN \
  apt-get install -y \
 	apache2 \
     mysql-server \
-    php5-curl \
-	php5 \
-    php5-dom \
-    php5-gettext \
-    php5-mbstring \
-    php5-xml \
-    php5-zip \
-    php5-zlib \
-    php5-gd \
+    php7.3 \
+	php7.3-curl\
+    php7.3-dom \
+    php7.3-gettext \
+    php7.3-mbstring \
+    php7.3-xml \
+    php7.3-zip \
+    php7.3-zlib \
+    php7.3-gd \
 	unzip && \
  echo "**** install nzbhydra2 ****" && \
  if [ -z ${SPOTWEB_RELEASE+x} ]; then \
