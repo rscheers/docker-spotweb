@@ -1,4 +1,4 @@
-FROM multiarch/debian-debootstrap:armhf-stretch-slim
+FROM multiarch/debian-debootstrap:armhf-buster-slim
 
 ENV ARCH armhf
 ENV S6OVERLAY_RELEASE https://github.com/just-containers/s6-overlay/releases/download/v1.22.1.0/s6-overlay-arm.tar.gz
@@ -15,7 +15,7 @@ COPY	dbsettings.inc.php /var/www/spotweb/dbsettings.inc.php
 RUN		chown -R www-data:www-data /var/www
 
 #ADD		nginx.conf /etc/nginx/nginx.conf
-ADD		spotweb.conf /etc/nginx/sites-enabled/spotweb.conf
+COPY		spotweb.conf /etc/nginx/sites-enabled/spotweb.conf
 
 #ADD s6/debian-root /
 #COPY s6/service /usr/local/bin/service

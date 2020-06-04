@@ -1,7 +1,7 @@
 #!/bin/bash -ex
 apt-get update
-apt-get install -y apt-utils
-apt-get install -y git nginx mariadb-common php7.3-fpm php7.3-gd
+apt-get install -y dialog apt-utils
+apt-get install -y git nginx php7.3-fpm php7.3-gd
  
 sed -i 's,;extension=pdo_mysql,extension=pdo_mysql,g'  /etc/php/7.3/cli/php.ini
 sed -i 's,;extension=mysql,extension=mysql,g'  /etc/php/7.3/cli/php.ini
