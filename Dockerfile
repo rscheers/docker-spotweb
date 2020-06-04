@@ -26,7 +26,7 @@ COPY		spotweb.conf /etc/nginx/sites-enabled/spotweb.conf
 # IPv6 disable flag for networks/devices that do not support it
 ENV IPv6 True
 
-EXPOSE 80
+EXPOSE 8085
 
 ENV S6_LOGGING 0
 ENV S6_KEEP_ENV 1

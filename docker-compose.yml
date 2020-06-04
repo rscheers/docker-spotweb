@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+  spotweb:
+    image: rwscheers/spotweb
+    container_name: spotweb
+    environment:
+      - TZ=Europe/Amsterdam
+    ports:
+      - 8085:8085
+    restart: unless-stopped
+networks:
+  default:
+    external:
+      name: docker
