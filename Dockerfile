@@ -15,7 +15,7 @@ RUN bash -ex install-spotweb.sh 2>&1 && \
 ENTRYPOINT [ "/s6-init" ]
 
 ADD s6/debian-root /
-COPY s6/service /usr/local/bin/service
+#COPY s6/service /usr/local/bin/service
 
 COPY	dbsettings.inc.php /var/www/spotweb/dbsettings.inc.php
 RUN		chown -R www-data:www-data /var/www
@@ -43,3 +43,4 @@ LABEL maintainer="rwscheers@hotmail.com"
 LABEL url="https://www.github.com/pi-hole/docker-pi-hole"
 
 #SHELL ["/bin/bash", "-c"]
+CMD ["nginx"]
