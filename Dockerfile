@@ -1,7 +1,6 @@
 FROM multiarch/debian-debootstrap:armhf-buster-slim
 
 ENV ARCH armhf
-#ENV S6OVERLAY_RELEASE https://github.com/just-containers/s6-overlay/releases/download/v1.22.1.0/s6-overlay-arm.tar.gz
 ENV S6OVERLAY_RELEASE https://github.com/just-containers/s6-overlay/releases/download/v2.0.0.1/s6-overlay-armhf.tar.gz
 
 # environment settings
@@ -15,9 +14,6 @@ RUN bash -ex install-spotweb.sh 2>&1 && \
     rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 ENTRYPOINT [ "/init" ]
-
-#ADD s6/debian-root /
-#COPY s6/service /usr/local/bin/service
 
 COPY	dbsettings.inc.php /var/www/spotweb/dbsettings.inc.php
 RUN		chown -R www-data:www-data /var/www
@@ -43,7 +39,7 @@ ARG SPOTWEB_RELEASE
 LABEL build_version="rwscheers version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL image="rwscheers/spotweb:v1.0_armhf"
 LABEL maintainer="rwscheers@hotmail.com"
-LABEL url="https://www.github.com/pi-hole/docker-pi-hole"
+LABEL url="https://github.com/rscheers/docker-spotweb.git"
 
 #SHELL ["/bin/bash", "-c"]
 CMD ["nginx"]
