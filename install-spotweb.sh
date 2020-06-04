@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 apt-get update
-apt-get install -y dialog apt-utils curl
+apt-get install -y dialog apt-utils curl cron procps
 apt-get install -y git nginx php7.3-fpm php7.3-gd
 curl -L -s $S6OVERLAY_RELEASE | tar xvzf - -C /
 mv /init /s6-init
