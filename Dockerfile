@@ -16,7 +16,7 @@ RUN bash -ex install-spotweb.sh 2>&1 && \
 
 ENTRYPOINT [ "/init" ]
 
-ADD s6/debian-root /
+#ADD s6/debian-root /
 #COPY s6/service /usr/local/bin/service
 
 COPY	dbsettings.inc.php /var/www/spotweb/dbsettings.inc.php
