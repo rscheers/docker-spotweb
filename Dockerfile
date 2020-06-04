@@ -21,6 +21,8 @@ RUN		chown -R www-data:www-data /var/www
 #ADD		nginx.conf /etc/nginx/nginx.conf
 COPY	spotweb.conf /etc/nginx/sites-enabled/spotweb.conf
 RUN     echo "daemon off;" >> /etc/nginx/nginx.conf
+RUN     echo "service php7.3-fpm start" > /init/services.d/php7.3-fpm/run
+RUN     echo "service php7.3-fpm stop" > /init/services.d/php7.3-fpm/finish
 
 # IPv6 disable flag for networks/devices that do not support it
 ENV IPv6 True
