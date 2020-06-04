@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+service php7.3-fpm start
