@@ -15,7 +15,6 @@ RUN bash -ex install-spotweb.sh 2>&1 && \
 
 ENTRYPOINT [ "/init" ]
 
-COPY	dbsettings.inc.php /var/www/spotweb/dbsettings.inc.php
 RUN		chown -R www-data:www-data /var/www
 
 #ADD		nginx.conf /etc/nginx/nginx.conf
