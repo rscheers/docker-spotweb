@@ -1,7 +1,7 @@
 #!/bin/bash -ex
 apt-get update
 apt-get install -y dialog apt-utils curl cron procps
-apt-get install -y git nginx php7.3-fpm php7.3-gd php7.3-curl php7.3-xml php7.3-mbstring php7.3-zip default-mysql-client
+apt-get install -y git nginx php7.3-fpm php7.3-gd php7.3-curl php7.3-xml php7.3-mbstring php7.3-zip php7.3-mysql
 curl -L -s $S6OVERLAY_RELEASE | tar xvzf - -C /
  
 sed -i 's,;extension=pdo_mysql,extension=pdo_mysql,g'  /etc/php/7.3/cli/php.ini
