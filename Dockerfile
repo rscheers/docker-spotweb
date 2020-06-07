@@ -19,6 +19,7 @@ RUN		chown -R www-data:www-data /var/www
 
 #ADD		nginx.conf /etc/nginx/nginx.conf
 COPY	spotweb.conf /etc/nginx/sites-enabled/spotweb.conf
+COPY    crontab /etc/crontab
 RUN     echo "daemon off;" >> /etc/nginx/nginx.conf
 
 ADD s6/debian-root /
